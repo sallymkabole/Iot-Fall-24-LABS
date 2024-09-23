@@ -1,0 +1,1 @@
+console.log('Smart Room Setup Assistant')

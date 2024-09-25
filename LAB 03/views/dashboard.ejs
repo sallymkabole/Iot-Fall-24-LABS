@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.umd.js"></script>
+    <script src="/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1 style="text-align: center; margin-bottom: 20px">
+          Smart Room Dashboard
+        </h1>
+
+        <div class="cards-container">
+          <% rooms.forEach(room => { %>
+          <div class="card">
+            <h2><%= room.name %></h2>
+            <div class="status">
+              <img
+                src="<%= room.light ? '/img/bulb-on.svg' : '/img/bulb-off.svg' %>"
+                alt="Light icon"
+                class="light-icon"
+              />
+              <span class="light-text"
+                ><%= room.light ? 'Light On' : 'Light Off' %></span
+              >
+            </div>
+            <p class="temperature"><%= room.temperature %> °C</p>
+            <button
+              class="toggle-light"
+              room-id="<%= room.id %>"
+              light-status="<%= room.light %>"
+            >
+              <%= room.light ? 'Turn Off' : 'Turn On' %>
+            </button>
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="sing_ctrl">
+          <button class="mult_ctrl" id="turn-all-on">Turn All Lights On</button>
+          <button class="mult_ctrl" id="turn-all-off">
+            Turn All Lights Off
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <h1 style="text-align: center; margin-bottom: 20px">
+          Time Series Plot
+        </h1>
+        <canvas id="lineGraph"></canvas>
+      </div>
+    </div>
+  </body>
+</html>

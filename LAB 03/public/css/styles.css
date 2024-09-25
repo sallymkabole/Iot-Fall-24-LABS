@@ -1,0 +1,105 @@
+* {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    overflow: hidden;
+
+}
+
+
+
+button {
+    margin: 5px;
+}
+
+.wrapper {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px, solid, black;
+
+}
+
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid black;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.temperature {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-light {
+    background-color: #ff6900;
+    color: white;
+    font-size: 1rem;
+}
+
+.sing_ctrl {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mult_ctrl {
+    background-color: #ff6900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.light-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
